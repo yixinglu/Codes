@@ -1,1 +1,2 @@
-There are some code examples of some programming books here.
+The codes from following books:
+	<<Core Python Programming>> by Wesley J. Chun
