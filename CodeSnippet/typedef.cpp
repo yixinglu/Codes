@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <stdint.h>
 
 struct Interface {
   virtual void print() = 0;
@@ -14,12 +15,23 @@ typedef std::tr1::shared_ptr<Interface> isptr;
 // class Impl : public isptr {
 
 class Impl : public Interface {
+  typedef int32_t value_type;
+  value_type mem;
   public:
+    typedef int32_t* pointer;
+    Impl(const pointer ptr) : mem(*ptr) {} 
+    
+    // not recommend, because value_type doesn't be seen
+    // in out of this class, although auto could be use 
+    // when C++11 supported
+    value_type getMem() const { return mem; }
+
     virtual void print() {
-      std::cout << "Impl" << std::endl;
+      std::cout << "Impl" << mem << std::endl;
     }
 };
 
+typedef std::tr1::shared_ptr<Impl> ImplSptr;
 typedef double matrix2[2][2];
 
 int main(int argc, char** argv) {
@@ -28,8 +40,14 @@ int main(int argc, char** argv) {
   std::cout << mat[0][0] << ", " << mat[0][1] << std::endl
             << mat[1][0] << ", " << mat[1][1] << std::endl;
 
-  isptr sp(new Impl());
+  int32_t a = 0x7fffffff;
+  isptr sp(new Impl(&a));
   sp->print();
+
+  ImplSptr imp(new Impl(&a));
+  // Impl::value_type var = imp->getMem();
+  auto var = imp->getMem();
+  std::cout << var << std::endl;
 
   return 0;
 }
