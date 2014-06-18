@@ -34,9 +34,25 @@ class Impl : public Interface {
 typedef std::tr1::shared_ptr<Impl> ImplSptr;
 typedef double matrix2[2][2];
 
+void test(matrix2& mat, matrix2* mat2) {
+  mat[0][0] = 1.0e-03;
+  (*mat2)[1][1] = 3.0e-03;
+}
+
+// 2 dimentional array reference and pointer
+void test2(double (&mat)[2][2], double (*mat2)[2][2],
+           double (*mat3)[2], double mat4[][2]) {
+  mat[1][0] = 2.0e-03;
+  (*mat2)[0][1] = 4.0e-03;
+  mat3[0][1] += 4.0e-02;
+  mat4[1][0] += 2.0e-02;
+}
+
 int main(int argc, char** argv) {
 
   matrix2 mat = {{1,0}, {0,1}};
+  test(mat, &mat);
+  test2(mat, &mat, mat, mat);
   std::cout << mat[0][0] << ", " << mat[0][1] << std::endl
             << mat[1][0] << ", " << mat[1][1] << std::endl;
 
