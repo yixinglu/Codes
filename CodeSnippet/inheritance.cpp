@@ -1,3 +1,5 @@
+// private and protected inheritance example
+
 #include <iostream>
 
 struct Interface {
