@@ -8,15 +8,15 @@ struct Interface {
 
 typedef std::tr1::shared_ptr<Interface> isptr;
 
-//error: can not typedef template without a type
+// error: can not typedef template without a type
 // typedef std::tr1::shared_ptr shared_ptr
 
-// error
+// warning
 // class Impl : public isptr {
 
 class Impl : public Interface {
-  typedef int32_t value_type;
-  value_type mem;
+    typedef int32_t value_type;
+    value_type mem;
   public:
     typedef int32_t* pointer;
     Impl(const pointer ptr) : mem(*ptr) {} 
