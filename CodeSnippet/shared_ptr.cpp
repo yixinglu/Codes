@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <iostream>
+#include <iterator>
 #include <vector>
 #include <memory>
 #include <time.h>
@@ -15,7 +17,7 @@ typedef shared_ptr<Base> base_ptr;
 typedef shared_ptr<Drive> drive_ptr;
 
 void test_performance() {
-  vector<base_ptr> vb, vb1;
+  vector<base_ptr> vb, vb1, vb2;
   size_t sz = 10000000;
   vector<drive_ptr> vd(sz);
 
@@ -28,6 +30,11 @@ void test_performance() {
 
   t = clock();
   vb1.insert(vb1.begin(), vd.begin(), vd.end());
+  cout << (double)(clock()-t)/CLOCKS_PER_SEC << endl;
+
+  t = clock();
+  vb2.reserve(vb2.size()+vd.size()); // slow without the line
+  copy(vd.begin(), vd.end(), back_inserter(vb2));
   cout << (double)(clock()-t)/CLOCKS_PER_SEC << endl;
 }
 
