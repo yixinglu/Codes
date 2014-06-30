@@ -18,7 +18,7 @@ typedef shared_ptr<Drive> drive_ptr;
 
 void test_performance() {
   vector<base_ptr> vb, vb1, vb2;
-  size_t sz = 10000000;
+  size_t sz = 10000000; // 10M
   vector<drive_ptr> vd(sz);
 
   auto t = clock();
