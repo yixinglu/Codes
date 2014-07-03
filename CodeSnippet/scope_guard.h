@@ -26,4 +26,5 @@ private:
 #define SCOPE_GUARD_NAME(x, y) SCOPE_GUARD_NAME_CAT(x, y)
 #define SCOPE_GUARD(guard) ScopeGuard SCOPE_GUARD_NAME(sg,__LINE__)(guard)
 
+
 #endif
