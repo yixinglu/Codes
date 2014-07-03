@@ -1,4 +1,3 @@
-// Memory leak defection
 #include "memchk.h"
 #include <iostream>
 
@@ -57,7 +56,7 @@ int main(int argc, char** argv)
     Interface* impl = new Impl;
     Test t(impl);
     t.test();
-    //delete impl;
+    delete impl;
 
     cout << sizeof(impl) << endl;
     _STATIC_ASSERT(sizeof(impl) == sizeof(int));
