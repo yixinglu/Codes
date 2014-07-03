@@ -12,7 +12,6 @@
 
 
 void testScopeGuard() {
-  MEM_CHK_START_DBG
   SCOPE_ALLOC_ARRAY(pChar1, char, 2);
   SCOPE_ALLOC(pInt1, int);
 
@@ -24,6 +23,7 @@ void testScopeGuard() {
 }
 
 int main() {
+  MEM_CHK_START_DBG
   testScopeGuard();
   return 0;
 }
