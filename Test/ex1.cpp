@@ -33,7 +33,7 @@ void t2() {
   unsigned int a = 0xFFFFFFF7;
   unsigned char i = (unsigned char)a;
   char* b = (char*)&a;
-  printf("%08x, %08x", i, *b);
+  printf("%08x, %08x\n", i, *b);
 }
 
 int i = 1;
