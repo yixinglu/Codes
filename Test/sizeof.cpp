@@ -84,7 +84,7 @@ int t7_(char var[]) {
 }
 
 void t7() {
-  t7_(var);
+  cout << t7_(var) << endl;
 }
 
 class AA {};
