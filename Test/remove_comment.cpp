@@ -5,7 +5,7 @@
 #include <io.h>
 
 #define BUFSIZE (1024*100)/*UL*/
-
+// this solution is not completely right
 void remove_comment(char* buf, size_t size) {
   char *p, *end, c;
   char *sq_start, *dq_start;
@@ -115,5 +115,6 @@ int main(int argc, char* argv[])
   *(buf+n) = '\0';
   printf(buf);
   close(fd);
+
   return 0;
 }
