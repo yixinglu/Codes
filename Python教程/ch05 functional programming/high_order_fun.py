@@ -68,3 +68,28 @@ print f
 print f()
 f2 = lazy_sum(1, 3, 5, 7, 9)
 print f==f2
+
+
+def my_map(f, L=None):
+  if not L:
+    L = []
+  r = []
+  for i in L:
+    r.append(f(i))
+  return# -*- coding: utf-8 -*- r
+
+print my_map(int, '1234')
+print my_map(int, ['1', '2', '3'])
+
+
+def my_map(f, L=None):
+  if not L:
+    L = []
+  r = []
+  for i in L:
+    r.append(f(i))
+  return r
+
+print my_map(int, '1234')
+print my_map(int, ['1', '2', '3'])
+
