@@ -52,7 +52,7 @@ print sum
 
 birth = int(raw_input('birth: '))
 if birth < 2000:
-  print u'00Ç°'
+  print u'00å‰'
 else:
-  print u'00ºó'
+  print u'00å'
 
