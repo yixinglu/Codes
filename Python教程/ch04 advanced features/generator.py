@@ -3,8 +3,10 @@
 # generator
 L = [x * x for x in range(10)]
 print L
+
 g = (x * x for x in range(10))
 print g
+
 print g.next(), g.next(), g.next(), g.next()
 for n in g:
   print n
@@ -15,6 +17,7 @@ def fab(max):
     print b
     a, b = b, a + b
     n = n + 1
+    
 print fab(6)
 
 
@@ -24,6 +27,7 @@ def fab(max):
     yield b
     a, b = b, a + b
     n = n + 1
+    
 print fab(6)
 
 def odd():
