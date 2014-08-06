@@ -44,7 +44,7 @@ class Chain(object):
 
   def __getattr__(self, path):
     if path=='users':
-      return lambda user: Chain(self._path + '/users/' + user)
+      return lambda user: Chain('%s/users/%s' % (self._path, user))
     return Chain('%s/%s' % (self._path, path))
 
   def __str__(self):
