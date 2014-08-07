@@ -20,3 +20,4 @@ for root, dirs, files in os.walk(current_dir):
     if dirname:
       call(['git', 'mv', os.path.join(root,directory), dirname])
 
+
