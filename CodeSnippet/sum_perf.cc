@@ -17,7 +17,7 @@ void sum(const vector<int> &data) {
   }
 
   double end = (double)clock() / CLOCKS_PER_SEC;
-  cout << "sum " << (end - start) << "s" << endl;
+  cout << "sum " << (end - start) << "s, sum=" <<sum << endl;
 }
 
 void sum_foreach(const vector<int> &data) {
@@ -29,7 +29,7 @@ void sum_foreach(const vector<int> &data) {
   }); 
 
   double end = (double)clock() / CLOCKS_PER_SEC;
-  cout << "sum_foreach " << (end - start) << "s" << endl;
+  cout << "sum_foreach " << (end - start) << "s, sum=" << sum << endl;
 }
 
 void sum2(const vector<int> &data) { 
@@ -42,7 +42,7 @@ void sum2(const vector<int> &data) {
   }
 
   double end = (double)clock() / CLOCKS_PER_SEC;
-  cout << "sum2 " << (end - start) << "s" << endl;
+  cout << "sum2 " << (end - start) << "s, sum=" << sum << endl;
 }
 
 void sum2_foreach(const vector<int> &data) { 
@@ -55,7 +55,7 @@ void sum2_foreach(const vector<int> &data) {
   }); 
 
   double end = (double)clock() / CLOCKS_PER_SEC;
-  cout << "sum2_foreach " << (end - start) << "s" << endl;
+  cout << "sum2_foreach " << (end - start) << "s, sum=" << sum << endl;
 }
 
 int main(int argc, char *argv[]) {
