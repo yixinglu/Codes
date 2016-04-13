@@ -50,6 +50,7 @@ class ProductB2 : public AbstractProductB {
 
 class AbstractFactory {
  public:
+  virtual ~AbstractFactory() {}
   virtual AbstractProductA *CreateProductA() = 0; 
   virtual AbstractProductB *CreateProductB() = 0; 
 };
