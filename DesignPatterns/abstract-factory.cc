@@ -5,13 +5,13 @@
 using namespace std;
 
 class AbstractProductA {
-public: 
+ public: 
   virtual ~AbstractProductA() {}
   virtual string DebugString() const = 0;
 };
 
 class ProductA1 : public AbstractProductA {
-public:
+ public:
   virtual ~ProductA1() {}
   virtual string DebugString() const {
     return "ProductA1";
@@ -19,7 +19,7 @@ public:
 };
 
 class ProductA2 : public AbstractProductA {
-public:
+ public:
   virtual ~ProductA2() {}
   virtual string DebugString() const {
     return "ProductA2";
@@ -27,13 +27,13 @@ public:
 };
 
 class AbstractProductB {
-public: 
+ public: 
   virtual ~AbstractProductB() {}
   virtual string DebugString() const = 0;
 };
 
 class ProductB1 : public AbstractProductB {
-public:
+ public:
   virtual ~ProductB1() {}
   virtual string DebugString() const {
     return "ProductB1";
@@ -41,7 +41,7 @@ public:
 };
 
 class ProductB2 : public AbstractProductB {
-public:
+ public:
   virtual ~ProductB2() {}
   virtual string DebugString() const {
     return "ProductB2";
