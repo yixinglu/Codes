@@ -67,8 +67,8 @@ class Director {
 };
 
 int main() {
-  unique_ptr<Builder> builder(new ConcreteBuilder);
-  Director director(*builder);
+  ConcreteBuilder builder;
+  Director director(builder);
   director.Construct();
 
   return 0;
