@@ -1,0 +1,12 @@
+
+#c/c++
+*.out
+*.o
+
+#py
+*.py[oc]
+
+#temp
+*~
+
+/DesignPatterns/factory-method.cc
