@@ -37,9 +37,20 @@ class ConcreteCreator : public Creator {
   }
 };
 
+template <class TheProduct>
+class StandardCreator : public Creator {
+ public:
+  virtual Product *FactoryMethod() {
+    return new TheProduct;
+  }
+};
+
 int main() {
   unique_ptr<Creator> creator(new ConcreteCreator);
   creator->AnOperation();
+
+  unique_ptr<Creator> my_creator(new StandardCreator<ConcreteProduct>);
+  my_creator->AnOperation();
 
   return 0;
 }
