@@ -7,7 +7,7 @@ using namespace std;
 class Singleton {
  public:
   static Singleton *Instance() {
-    if (instance_) {
+    if (instance_ == nullptr) {
       instance_.reset(new Singleton);
     }
     return instance_.get();
