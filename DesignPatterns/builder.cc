@@ -51,7 +51,6 @@ class ConcreteBuilder : public Builder {
   Product *product_;
 };
 
-
 class Director {
  public:
   Director(Builder &builder) : builder_(builder) {}
